@@ -35,11 +35,10 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
-
 </head>
-<body class="bg-[var(--bg,#05060a)] text-slate-200 antialiased">
 
-  <!-- NAVBAR (Tailwind) -->
+<body class="bg-[var(--bg,#05060a)] text-slate-200 antialiased">
+  <!-- NAVBAR -->
   <header class="w-full fixed top-4 left-0 z-50">
     <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-3">
@@ -68,7 +67,7 @@
     </div>
   </header>
 
-  <!-- MOBILE NAV (hidden by default) -->
+  <!-- MOBILE NAV -->
   <div id="mobileNav" class="fixed inset-0 bg-[rgba(2,6,23,0.7)] z-40 hidden">
     <div class="bg-[#071021] w-72 h-full p-6 neon-border">
       <button id="mobileClose" class="mb-6 text-slate-300"><i class="fas fa-times"></i></button>
@@ -83,17 +82,19 @@
     </div>
   </div>
 
-  <!-- HERO (Left-side layout as requested) -->
+  <!-- MAIN -->
   <main id="home" class="pt-28">
+
+    <!-- HERO -->
     <section class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-      <!-- Left column: Large circular photo -->
+      <!-- Left: Photo -->
       <div class="col-span-1 flex justify-center lg:justify-start">
         <div class="w-64 md:w-72 lg:w-96">
           <img id="profilePhoto" src="profile.png" alt="Profile Photo" class="profile-photo mx-auto block" />
         </div>
       </div>
 
-      <!-- Right columns: content spanning 2 cols -->
+      <!-- Right: Intro -->
       <div class="col-span-2">
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold neon-text">Hi, I'm <span class="text-neon">Kareem Basha Shaik</span></h1>
         <p class="mt-4 text-slate-300 text-base md:text-lg leading-relaxed max-w-3xl">
@@ -138,467 +139,319 @@
     <!-- Separator -->
     <div class="max-w-6xl mx-auto px-6 mt-12 border-t border-slate-800"></div>
 
-    
-   <!-- Streamlit Apps Section -->
-<section id="streamlit" class="max-w-6xl mx-auto px-6 mt-12">
+    <!-- STREAMLIT APPS -->
+    <section id="streamlit" class="max-w-6xl mx-auto px-6 mt-12">
+      <h2 class="text-2xl md:text-3xl font-semibold neon-text mb-6">Streamlit Apps</h2>
 
-  <h2 class="text-2xl md:text-3xl font-semibold neon-text mb-6">Streamlit Apps</h2>
+      <div class="swiper streamlit-swiper">
+        <div class="swiper-wrapper">
 
-  <div class="swiper streamlit-swiper">
-    <div class="swiper-wrapper">
+          <!-- Farm Intelligence -->
+          <div class="swiper-slide p-4">
+            <div class="rounded-2xl p-6 glass neon-border">
+              <h3 class="text-xl font-semibold mb-3">AI-Driven Farm Intelligence Dashboard</h3>
 
-      <!-- ============================================ -->
-      <!-- 1. AI-Driven Farm Intelligence Dashboard     -->
-      <!-- ============================================ -->
-      <div class="swiper-slide p-4">
-        <div class="rounded-2xl p-6 glass neon-border">
-
-          <h3 class="text-xl font-semibold mb-3">AI-Driven Farm Intelligence Dashboard</h3>
-
-          <!-- Short Description -->
-          <p class="text-slate-300 text-sm leading-relaxed mb-3">
-            AI-Driven Farm Intelligence is a real-time Streamlit dashboard integrating live weather and
-            market-price feeds to generate daily automated recommendations for irrigation, pesticide timing,
-            and sell/hold decisions — powered by Supabase and scheduled GitHub Actions.
-          </p>
-
-          <!-- Bullet Points -->
-          <ul class="text-slate-300 text-sm list-disc pl-5 space-y-1 mb-4">
-            <li>Real-time decisioning with automated daily pipelines (weather + market) generating actionable recommendations.</li>
-            <li>Production-ready automation using GitHub Actions (6:00 AM IST) and Supabase for storage + instant dashboard updates.</li>
-            <li>ML-ready analytics pipeline prepared for NeuralProphet / scikit-learn forecasting and trend insights.</li>
-          </ul>
-
-          <!-- Video -->
-          <video 
-            src="ai farm dashboard.webm"
-            autoplay
-            muted
-            loop
-            playsinline
-            class="w-full h-64 object-cover rounded-xl shadow-md neon-border"
-          ></video>
-
-          <div class="mt-4 flex flex-col gap-3">
-            <a class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center"
-               href="https://farm-intelligence-analytics-dashboard-9wca22appgqqextvviqz2cp.streamlit.app/" 
-               target="_blank">
-              Click Me to Open App
-            </a>
-
-            <a class="px-4 py-2 rounded-lg border border-slate-700 text-sm text-center"
-               href="https://github.com/kareem-2413/farm-intelligence-analytics-dashboard" 
-               target="_blank">
-               Repo
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-
-      <!-- ============================================ -->
-      <!-- 2. AI Automated Data Cleaning Assistant      -->
-      <!-- ============================================ -->
-      <div class="swiper-slide p-4">
-        <div class="rounded-2xl p-6 glass neon-border">
-
-          <h3 class="text-xl font-semibold mb-3">AI Automated Data Cleaning Assistant</h3>
-
-          <!-- Short Description -->
-          <p class="text-slate-300 text-sm leading-relaxed mb-3">
-            A fast, browser-based data cleaning assistant built with Python and Streamlit. It automates missing-value 
-            fixes, outlier corrections, data transformations, metadata creation, and one-click EDA to speed up data 
-            preparation from start to finish.
-          </p>
-
-          <!-- Bullet Points -->
-          <ul class="text-slate-300 text-sm list-disc pl-5 space-y-1 mb-4">
-            <li>Automates preprocessing: missing values, outliers, text cleanup, filters, sorting, grouping.</li>
-            <li>Generates metadata + cleaning reports in JSON/Excel for reproducibility.</li>
-            <li>Includes one-click EDA with statistics, correlations, and categorical insights.</li>
-          </ul>
-
-          <!-- Video -->
-          <video 
-            src="data cleaning.webm"
-            autoplay
-            muted
-            loop
-            playsinline
-            class="w-full h-64 object-cover rounded-xl shadow-md neon-border"
-          ></video>
-
-          <div class="mt-4 flex flex-col gap-3">
-            <a class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center"
-               href="https://kareem-bhai-data-cleaning-assistant-ckicbcsxhkwzjz3qizznze.streamlit.app/" 
-               target="_blank">
-              Click Me to Open App
-            </a>
-
-            <a class="px-4 py-2 rounded-lg border border-slate-700 text-sm text-center"
-               href="https://github.com/kareem-2413/data-cleaning-assistant" 
-               target="_blank">
-               Repo
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Pagination -->
-    <div class="swiper-pagination mt-4"></div>
-  </div>
-
-</section>
-
-<section id="ml-projects" class="max-w-6xl mx-auto px-6 mt-16">
-
-  <!-- Section Heading with Divider -->
-  <h2 class="section-heading text-2xl md:text-3xl font-semibold neon-text">
-    Machine Learning Projects
-  </h2>
-
-  <!-- Swiper -->
-  <div class="swiper ml-swiper">
-    <div class="swiper-wrapper">
-
-      <!-- ============================== -->
-      <!-- 1. Customer Churn Prediction -->
-      <!-- ============================== -->
-      <div class="swiper-slide">
-        <div class="card-wrapper flip-card glass neon-border">
-
-          <div class="flip-card-inner">
-
-            <!-- FRONT -->
-            <div class="flip-card-front p-5 rounded-2xl">
-              <img src="ml/customer churn.png"
-                alt="Customer Churn Prediction"
-                class="w-full h-56 object-cover rounded-xl shadow-md neon-border" />
-
-              <h3 class="text-xl font-semibold text-neon mt-4">
-                Customer Churn Prediction
-              </h3>
-
-              <div class="flex flex-wrap gap-2 mt-3">
-                <span class="badge">Accuracy: 79%</span>
-                <span class="badge">Models: LR + RF</span>
-              </div>
-            </div>
-
-            <!-- BACK -->
-            <div class="flip-card-back p-5 rounded-2xl">
-              <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                Logistic Regression and Random Forest model to predict churn with ~79% accuracy.
-                Includes feature importance and SMOTE-based improvement analysis.
+              <p class="text-slate-300 text-sm leading-relaxed mb-3">
+                AI-Driven Farm Intelligence is a real-time Streamlit dashboard integrating live weather and
+                market-price feeds to generate daily automated recommendations for irrigation, pesticide timing,
+                and sell/hold decisions — powered by Supabase and scheduled GitHub Actions.
               </p>
 
-              <a href="https://github.com/kareem-2413/Customer_churn_prediction"
-                target="_blank"
-                class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center block">
-                View GitHub Repo
-              </a>
-            </div>
+              <ul class="text-slate-300 text-sm list-disc pl-5 space-y-1 mb-4">
+                <li>Real-time decisioning with automated daily pipelines (weather + market) generating actionable recommendations.</li>
+                <li>Production-ready automation using GitHub Actions (6:00 AM IST) and Supabase for storage + instant dashboard updates.</li>
+                <li>ML-ready analytics pipeline prepared for NeuralProphet / scikit-learn forecasting and trend insights.</li>
+              </ul>
 
-          </div>
-        </div>
-      </div>
+              <!-- Video: NOTE spaces in filename are used as requested -->
+              <video
+                src="ai farm dashboard.webm"
+                autoplay
+                muted
+                loop
+                playsinline
+                class="w-full h-64 object-cover rounded-xl shadow-md neon-border"
+              ></video>
 
-      <!-- ============================== -->
-      <!-- 2. Healthcare Fraud Detection -->
-      <!-- ============================== -->
-      <div class="swiper-slide">
-        <div class="card-wrapper flip-card glass neon-border">
+              <div class="mt-4 flex flex-col gap-3">
+                <a class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center"
+                   href="https://farm-intelligence-analytics-dashboard-9wca22appgqqextvviqz2cp.streamlit.app/"
+                   target="_blank">Click Me to Open App</a>
 
-          <div class="flip-card-inner">
-
-            <!-- FRONT -->
-            <div class="flip-card-front p-5 rounded-2xl">
-              <img src="ml/health care.png"
-                alt="Healthcare Fraud Detection"
-                class="w-full h-56 object-cover rounded-xl shadow-md neon-border" />
-
-              <h3 class="text-xl font-semibold text-neon mt-4">
-                Healthcare Fraud Detection
-              </h3>
-
-              <div class="flex flex-wrap gap-2 mt-3">
-                <span class="badge">Accuracy: 94%</span>
-                <span class="badge">Imbalanced Data</span>
+                <a class="px-4 py-2 rounded-lg border border-slate-700 text-sm text-center"
+                   href="https://github.com/kareem-2413/farm-intelligence-analytics-dashboard"
+                   target="_blank">Repo</a>
               </div>
             </div>
+          </div>
 
-            <!-- BACK -->
-            <div class="flip-card-back p-5 rounded-2xl">
-              <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                Fraud detection using Logistic Regression and Random Forest.
-                Includes imbalance handling and precision/recall evaluation.
+          <!-- Data Cleaning Assistant -->
+          <div class="swiper-slide p-4">
+            <div class="rounded-2xl p-6 glass neon-border">
+              <h3 class="text-xl font-semibold mb-3">AI Automated Data Cleaning Assistant</h3>
+
+              <p class="text-slate-300 text-sm leading-relaxed mb-3">
+                A fast, browser-based data cleaning assistant built with Python and Streamlit. It automates missing-value
+                fixes, outlier corrections, data transformations, metadata creation, and one-click EDA to speed up data
+                preparation from start to finish.
               </p>
 
-              <a href="https://github.com/kareem-2413/Healthcare-claims-fraud-detection"
-                target="_blank"
-                class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center block">
-                View GitHub Repo
-              </a>
-            </div>
+              <ul class="text-slate-300 text-sm list-disc pl-5 space-y-1 mb-4">
+                <li>Automates preprocessing: missing values, outliers, text cleanup, filters, sorting, grouping.</li>
+                <li>Generates metadata + cleaning reports in JSON/Excel for reproducibility.</li>
+                <li>Includes one-click EDA with statistics, correlations, and categorical insights.</li>
+              </ul>
 
-          </div>
-        </div>
-      </div>
+              <!-- Video -->
+              <video
+                src="data cleaning.webm"
+                autoplay
+                muted
+                loop
+                playsinline
+                class="w-full h-64 object-cover rounded-xl shadow-md neon-border"
+              ></video>
 
-      <!-- ============================== -->
-      <!-- 3. Crop Yield Prediction -->
-      <!-- ============================== -->
-      <div class="swiper-slide">
-        <div class="card-wrapper flip-card glass neon-border">
+              <div class="mt-4 flex flex-col gap-3">
+                <a class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center"
+                   href="https://kareem-bhai-data-cleaning-assistant-ckicbcsxhkwzjz3qizznze.streamlit.app/"
+                   target="_blank">Click Me to Open App</a>
 
-          <div class="flip-card-inner">
-
-            <!-- FRONT -->
-            <div class="flip-card-front p-5 rounded-2xl">
-              <img src="ml/crop yeild prediction.png"
-                alt="Crop Yield Forecasting"
-                class="w-full h-56 object-cover rounded-xl shadow-md neon-border" />
-
-              <h3 class="text-xl font-semibold text-neon mt-4">
-                Crop Yield Forecasting
-              </h3>
-
-              <div class="flex flex-wrap gap-2 mt-3">
-                <span class="badge">R²: 0.91</span>
-                <span class="badge">Linear Regression</span>
+                <a class="px-4 py-2 rounded-lg border border-slate-700 text-sm text-center"
+                   href="https://github.com/kareem-2413/data-cleaning-assistant"
+                   target="_blank">Repo</a>
               </div>
             </div>
-
-            <!-- BACK -->
-            <div class="flip-card-back p-5 rounded-2xl">
-              <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                Predicts agricultural yield using environmental and soil variables.
-                Strong regression accuracy with interpretable feature importance.
-              </p>
-
-              <a href="https://github.com/kareem-2413/Crop-yield-forecasting-"
-                target="_blank"
-                class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center block">
-                View GitHub Repo
-              </a>
-            </div>
-
           </div>
+
+        </div>
+
+        <div class="swiper-pagination mt-4"></div>
+      </div>
+    </section>
+
+    <!-- MACHINE LEARNING PROJECTS -->
+    <section id="ml-projects" class="max-w-6xl mx-auto px-6 mt-16">
+      <h2 class="section-heading text-2xl md:text-3xl font-semibold neon-text">Machine Learning Projects</h2>
+
+      <div class="swiper ml-swiper">
+        <div class="swiper-wrapper">
+
+          <!-- Customer Churn -->
+          <div class="swiper-slide">
+            <div class="card-wrapper flip-card glass neon-border">
+              <div class="flip-card-inner">
+                <div class="flip-card-front p-5 rounded-2xl">
+                  <img src="customer_churn.png.png" alt="Customer Churn Prediction" class="w-full h-56 object-cover rounded-xl shadow-md neon-border" />
+                  <h3 class="text-xl font-semibold text-neon mt-4">Customer Churn Prediction</h3>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="badge">Accuracy: 79%</span>
+                    <span class="badge">Models: LR + RF</span>
+                  </div>
+                </div>
+
+                <div class="flip-card-back p-5 rounded-2xl">
+                  <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                    Logistic Regression and Random Forest model to predict churn with ~79% accuracy.
+                    Includes feature importance and SMOTE-based improvement analysis.
+                  </p>
+                  <a href="https://github.com/kareem-2413/Customer_churn_prediction" target="_blank" class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center block">
+                    View GitHub Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Healthcare Fraud -->
+          <div class="swiper-slide">
+            <div class="card-wrapper flip-card glass neon-border">
+              <div class="flip-card-inner">
+                <div class="flip-card-front p-5 rounded-2xl">
+                  <img src="health_care.png.png" alt="Healthcare Fraud Detection" class="w-full h-56 object-cover rounded-xl shadow-md neon-border" />
+                  <h3 class="text-xl font-semibold text-neon mt-4">Healthcare Fraud Detection</h3>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="badge">Accuracy: 94%</span>
+                    <span class="badge">Imbalanced Data</span>
+                  </div>
+                </div>
+
+                <div class="flip-card-back p-5 rounded-2xl">
+                  <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                    Fraud detection using Logistic Regression and Random Forest.
+                    Includes imbalance handling and precision/recall evaluation.
+                  </p>
+                  <a href="https://github.com/kareem-2413/Healthcare-claims-fraud-detection" target="_blank" class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center block">
+                    View GitHub Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Crop Yield -->
+          <div class="swiper-slide">
+            <div class="card-wrapper flip-card glass neon-border">
+              <div class="flip-card-inner">
+                <div class="flip-card-front p-5 rounded-2xl">
+                  <img src="crop_yeild_prediction.png.png" alt="Crop Yield Forecasting" class="w-full h-56 object-cover rounded-xl shadow-md neon-border" />
+                  <h3 class="text-xl font-semibold text-neon mt-4">Crop Yield Forecasting</h3>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="badge">R²: 0.91</span>
+                    <span class="badge">Linear Regression</span>
+                  </div>
+                </div>
+
+                <div class="flip-card-back p-5 rounded-2xl">
+                  <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                    Predicts agricultural yield using environmental and soil variables.
+                    Strong regression accuracy with interpretable feature importance.
+                  </p>
+                  <a href="https://github.com/kareem-2413/Crop-yield-forecasting-" target="_blank" class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center block">
+                    View GitHub Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="swiper-pagination mt-4"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS MARQUEE -->
+    <section id="projects" class="max-w-6xl mx-auto px-6 mt-16 fade-section">
+      <h2 class="section-heading text-2xl md:text-3xl font-semibold neon-text mb-6">Projects</h2>
+
+      <div class="relative overflow-hidden marquee-projects-container">
+        <div class="flex gap-6 marquee-projects">
+
+          <!-- Card 1 -->
+          <div class="project-card glass neon-border glow-hover tilt-effect">
+            <h3 class="project-title">Pizza Sales Dashboard</h3>
+            <img src="pizzasales.png.png" class="project-img" alt="Pizza Sales Dashboard" />
+            <p class="project-desc">Revenue trends, customer preferences, and time-based analysis.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="project-card glass neon-border glow-hover tilt-effect">
+            <h3 class="project-title">Manager Aspirations of Gen-Z</h3>
+            <img src="02.jpg.jpg" class="project-img" alt="Manager Aspirations" />
+            <p class="project-desc">Highlights leadership & culture preferences of emerging workforce.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="project-card glass neon-border glow-hover tilt-effect">
+            <h3 class="project-title">Mission Aspirations of Gen-Z</h3>
+            <img src="03.jpg.jpg" class="project-img" alt="Mission Aspirations" />
+            <p class="project-desc">Understand Gen-Z values, growth goals, and company expectations.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="project-card glass neon-border glow-hover tilt-effect">
+            <h3 class="project-title">Healthcare Dashboard</h3>
+            <img src="healthcare.jpg.jpg" class="project-img" alt="Healthcare Dashboard" />
+            <p class="project-desc">Patient flow, cost insights, satisfaction, and KPIs.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="project-card glass neon-border glow-hover tilt-effect">
+            <h3 class="project-title">Learning Aspirations of Gen-Z</h3>
+            <img src="01.jpg.jpg" class="project-img" alt="Learning Aspirations" />
+            <p class="project-desc">Captures Gen-Z learning styles and early career motivations.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="project-card glass neon-border glow-hover tilt-effect">
+            <h3 class="project-title">HR Attrition Dashboard</h3>
+            <img src="tablue.jpg.jpg" class="project-img" alt="HR Attrition" />
+            <p class="project-desc">Attrition trends, demographics, and satisfaction scores.</p>
+          </div>
+
+          <!-- Duplicate for smooth loop -->
+          <div class="project-card glass neon-border glow-hover tilt-effect">
+            <h3 class="project-title">Pizza Sales Dashboard</h3>
+            <img src="pizzasales.png.png" class="project-img" alt="Pizza Sales Dashboard" />
+            <p class="project-desc">Revenue trends, customer preferences, and time-based analysis.</p>
+          </div>
+
+          <div class="project-card glass neon-border glow-hover tilt-effect">
+            <h3 class="project-title">Manager Aspirations of Gen-Z</h3>
+            <img src="/02.jpg.jpg" class="project-img" alt="Manager Aspirations" />
+            <p class="project-desc">Highlights leadership & culture preferences of emerging workforce.</p>
+          </div>
+
         </div>
       </div>
+    </section>
 
-    </div>
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="max-w-6xl mx-auto px-6 mt-12">
+      <h2 class="text-2xl md:text-3xl font-semibold neon-text mb-6">Certificates</h2>
 
-    <!-- Pagination -->
-    <div class="swiper-pagination mt-4"></div>
-  </div>
-</section>
+      <div class="relative overflow-hidden">
+        <div class="flex gap-6 animate-scroll-left">
+          <img src="Data_analysis_essentials.jpg.jpg" class="certificate-auto" alt="Data analysis essentials" />
+          <img src="Free_code_camp.jpg.jpg" class="certificate-auto" alt="Free code camp" />
+          <img src="Guvi_certificate.png.png" class="certificate-auto" alt="Guvi certificate" />
+          <img src="Data_science.jpg.jpg" class="certificate-auto" alt="Data science" />
+          <img src="Tata_certificate.jpg.jpg" class="certificate-auto" alt="Tata certificate" />
+          <img src="prompt_engineering_certificate.jpg.jpg" class="certificate-auto" alt="Prompt engineering" />
+          <img src="Accenture_certificate.jpg.jpg" class="certificate-auto" alt="Accenture certificate" />
 
-
-
-
-    
-<!-- Projects Section (Marquee Style) -->
-<section id="projects" class="max-w-6xl mx-auto px-6 mt-16 fade-section">
-
-  <h2 class="section-heading text-2xl md:text-3xl font-semibold neon-text mb-6">
-    Projects
-  </h2>
-
-  <div class="relative overflow-hidden marquee-projects-container">
-
-    <div class="flex gap-6 marquee-projects">
-
-      <!-- Project Card 1 -->
-      <div class="project-card glass neon-border glow-hover tilt-effect">
-        <h3 class="project-title">Pizza Sales Dashboard</h3>
-        <img src="projects/pizzasales.png" class="project-img" />
-        <p class="project-desc">
-          Revenue trends, customer preferences, and time-based analysis.
-        </p>
+          <!-- Duplicate set -->
+          <img src="Data_analysis_essentials.jpg.jpg" class="certificate-auto" alt="Data analysis essentials" />
+          <img src="Free_code_camp.jpg.jpg" class="certificate-auto" alt="Free code camp" />
+          <img src="Guvi_certificate.png.png" class="certificate-auto" alt="Guvi certificate" />
+          <img src="Data_science.jpg.jpg" class="certificate-auto" alt="Data science" />
+          <img src="Tata_certificate.jpg.jpg" class="certificate-auto" alt="Tata certificate" />
+          <img src="prompt_engineering_certificate.jpg.jpg" class="certificate-auto" alt="Prompt engineering" />
+          <img src="Accenture_certificate.jpg.jpg" class="certificate-auto" alt="Accenture certificate" />
+        </div>
       </div>
+    </section>
 
-      <!-- Project Card 2 -->
-      <div class="project-card glass neon-border glow-hover tilt-effect">
-        <h3 class="project-title">Manager Aspirations of Gen-Z</h3>
-        <img src="projects/02.jpg" class="project-img" />
-        <p class="project-desc">
-          Highlights leadership & culture preferences of emerging workforce.
+    <!-- CONTACT -->
+    <section id="contact" class="max-w-6xl mx-auto px-6 mt-16 mb-20">
+      <h2 class="section-heading text-2xl md:text-3xl font-semibold neon-text mb-8">Contact</h2>
+
+      <div class="fade-section">
+        <p class="text-slate-300 text-base leading-relaxed max-w-2xl">
+          Feel free to reach out to me for job opportunities, collaborations, or project discussions.
         </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+          <a href="mailto:kareembashashaik2401@gmail.com" class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
+            <i class="fas fa-envelope text-neon"></i>
+            <span>Email</span>
+          </a>
+
+          <a href="tel:+919573434890" class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
+            <i class="fas fa-phone text-neon"></i>
+            <span>Call Me</span>
+          </a>
+
+          <a href="https://wa.me/919573434890" target="_blank" class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
+            <i class="fab fa-whatsapp text-neon"></i>
+            <span>WhatsApp</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/kareembashaanalyst/" target="_blank" class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
+            <i class="fab fa-linkedin text-neon"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+
+        <div class="mt-8 text-sm text-slate-400">
+          <p><strong>Email:</strong> <a href="mailto:kareembashashaik2401@gmail.com" class="text-neon">kareembashashaik2401@gmail.com</a></p>
+          <p class="mt-1"><strong>Mobile:</strong> <a href="tel:+919573434890" class="text-neon">+91 95734 34890</a></p>
+        </div>
       </div>
+    </section>
 
-      <!-- Project Card 3 -->
-      <div class="project-card glass neon-border glow-hover tilt-effect">
-        <h3 class="project-title">Mission Aspirations of Gen-Z</h3>
-        <img src="projects/03.jpg" class="project-img" />
-        <p class="project-desc">
-          Understand Gen-Z values, growth goals, and company expectations.
-        </p>
-      </div>
-
-      <!-- Project Card 4 -->
-      <div class="project-card glass neon-border glow-hover tilt-effect">
-        <h3 class="project-title">Healthcare Dashboard</h3>
-        <img src="projects/healthcare.jpg" class="project-img" />
-        <p class="project-desc">
-          Patient flow, cost insights, satisfaction, and KPIs.
-        </p>
-      </div>
-
-      <!-- Project Card 5 -->
-      <div class="project-card glass neon-border glow-hover tilt-effect">
-        <h3 class="project-title">Learning Aspirations of Gen-Z</h3>
-        <img src="projects/01.jpg" class="project-img" />
-        <p class="project-desc">
-          Captures Gen-Z learning styles and early career motivations.
-        </p>
-      </div>
-
-      <!-- Project Card 6 -->
-      <div class="project-card glass neon-border glow-hover tilt-effect">
-        <h3 class="project-title">HR Attrition Dashboard</h3>
-        <img src="projects/tablue.jpg" class="project-img" />
-        <p class="project-desc">
-          Attrition trends, demographics, and satisfaction scores.
-        </p>
-      </div>
-
-      <!-- Duplicate for infinite loop -->
-      <div class="project-card glass neon-border glow-hover tilt-effect">
-        <h3 class="project-title">Pizza Sales Dashboard</h3>
-        <img src="projects/pizzasales.png" class="project-img" />
-        <p class="project-desc">
-          Revenue trends, customer preferences, and time-based analysis.
-        </p>
-      </div>
-
-      <div class="project-card glass neon-border glow-hover tilt-effect">
-        <h3 class="project-title">Manager Aspirations of Gen-Z</h3>
-        <img src="projects/02.jpg" class="project-img" />
-        <p class="project-desc">
-          Highlights leadership & culture preferences of emerging workforce.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-
-  <section id="certificates" class="max-w-6xl mx-auto px-6 mt-12">
-  <h2 class="text-2xl md:text-3xl font-semibold neon-text mb-6">Certificates</h2>
-
-  <div class="relative overflow-hidden">
-    
-    <!-- Scrolling Row -->
-    <div class="flex gap-6 animate-scroll-left">
-      
-      <img src="certificates/Data analysis essentials.jpg" class="certificate-auto" />
-      <img src="certificates/Free code camp.jpg" class="certificate-auto" />
-      <img src="certificates/Guvi certificate.png" class="certificate-auto" />
-      <img src="certificates/Data science.jpg" class="certificate-auto" />
-      <img src="certificates/Tata certificate.jpg" class="certificate-auto" />
-      <img src="certificates/prompt engineering certificate.jpg" class="certificate-auto" />
-      <img src="certificates/Accenture certificate.jpg" class="certificate-auto" />
-      
-
-      <!-- Duplicate set for infinite looping -->
-       
-      <img src="certificates/Data analysis essentials.jpg" class="certificate-auto" />
-      <img src="certificates/Free code camp.jpg" class="certificate-auto" />
-      <img src="certificates/Guvi certificate.png" class="certificate-auto" />
-      <img src="certificates/Data science.jpg" class="certificate-auto" />
-      <img src="certificates/Tata certificate.jpg" class="certificate-auto" />
-      <img src="certificates/prompt engineering certificate.jpg" class="certificate-auto" />
-      <img src="certificates/Accenture certificate.jpg" class="certificate-auto" />
-      
-
-    </div>
-
-  </div>
-</section>
-
-
-
-
- <!-- Contact Section -->
-<section id="contact" class="max-w-6xl mx-auto px-6 mt-16 mb-20">
-
-  <h2 class="section-heading text-2xl md:text-3xl font-semibold neon-text mb-8">
-    Contact
-  </h2>
-
-  <div class="fade-section">
-
-    <p class="text-slate-300 text-base leading-relaxed max-w-2xl">
-      Feel free to reach out to me for job opportunities, collaborations, or project discussions.
-    </p>
-
-    <!-- Contact Buttons Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-
-      <!-- Email -->
-      <a href="mailto:kareembashashaik2401@gmail.com"
-         class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
-        <i class="fas fa-envelope text-neon"></i>
-        <span>Email</span>
-      </a>
-
-      <!-- Phone -->
-      <a href="tel:+919573434890"
-         class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
-        <i class="fas fa-phone text-neon"></i>
-        <span>Call Me</span>
-      </a>
-
-      <!-- WhatsApp -->
-      <a href="https://wa.me/919573434890"
-         target="_blank"
-         class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
-        <i class="fab fa-whatsapp text-neon"></i>
-        <span>WhatsApp</span>
-      </a>
-
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/kareembashaanalyst/"
-         target="_blank"
-         class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
-        <i class="fab fa-linkedin text-neon"></i>
-        <span>LinkedIn</span>
-      </a>
-
-    </div>
-
-    <!-- Direct Email Text -->
-    <div class="mt-8 text-sm text-slate-400">
-      <p><strong>Email:</strong> 
-        <a href="mailto:kareembashashaik2401@gmail.com" class="text-neon">
-          kareembashashaik2401@gmail.com
-        </a>
-      </p>
-
-      <p class="mt-1"><strong>Mobile:</strong> 
-        <a href="tel:+919573434890" class="text-neon">
-          +91 95734 34890
-        </a>
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer mt-8">
       <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <div>&copy; 2024 Kareem Basha Shaik | All Rights Reserved</div>
