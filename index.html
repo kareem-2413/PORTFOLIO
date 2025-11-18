@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Professional portfolio of a data analyst showcasing projects, skills, and certifications.">
+  <title>Kareem Basha Shaik — Data Analyst</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            neon: { DEFAULT: '#00e5ff', light: '#66fbff' },
+            panel: '#071021',
+            accent: '#00c6ff'
+          },
+          boxShadow: {
+            neon: '0 4px 30px rgba(0,198,255,0.12), 0 0 30px rgba(0,198,255,0.06)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body class="bg-[var(--bg,#05060a)] text-slate-200 antialiased">
+
+  <!-- NAVBAR (Tailwind) -->
+  <header class="w-full fixed top-4 left-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-slate-800 to-[#071021] flex items-center justify-center neon-border shadow-sm">
+          <img src="profile.png" alt="logo" class="w-8 h-8 rounded-sm object-cover"/>
+        </div>
+        <div class="text-sm">
+          <div class="font-semibold">Kareem Basha Shaik</div>
+          <div class="text-xs text-slate-400">Data Analyst</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex gap-6 items-center text-sm">
+        <a href="#home" class="nav-link hover:text-neon transition">Home</a>
+        <a href="#projects" class="nav-link hover:text-neon transition">Projects</a>
+        <a href="#streamlit" class="nav-link hover:text-neon transition">Streamlit Apps</a>
+        <a href="#certificates" class="nav-link hover:text-neon transition">Certificates</a>
+        <a href="#contact" class="nav-link hover:text-neon transition">Contact</a>
+        <a href="Shaik Kareem Basha.pdf" download class="ml-3 px-3 py-2 rounded-lg bg-neon text-black text-sm">Resume</a>
+      </nav>
+
+      <!-- mobile menu button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-[#071021] neon-border">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV (hidden by default) -->
+  <div id="mobileNav" class="fixed inset-0 bg-[rgba(2,6,23,0.7)] z-40 hidden">
+    <div class="bg-[#071021] w-72 h-full p-6 neon-border">
+      <button id="mobileClose" class="mb-6 text-slate-300"><i class="fas fa-times"></i></button>
+      <nav class="flex flex-col gap-4">
+        <a href="#home" class="nav-link-mobile">Home</a>
+        <a href="#projects" class="nav-link-mobile">Projects</a>
+        <a href="#streamlit" class="nav-link-mobile">Streamlit Apps</a>
+        <a href="#certificates" class="nav-link-mobile">Certificates</a>
+        <a href="#contact" class="nav-link-mobile">Contact</a>
+        <a href="Shaik Kareem Basha.pdf" download class="mt-4 px-3 py-2 rounded-lg bg-neon text-black text-sm inline-block">Resume</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO (Left-side layout as requested) -->
+  <main id="home" class="pt-28">
+    <section class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      <!-- Left column: Large circular photo -->
+      <div class="col-span-1 flex justify-center lg:justify-start">
+        <div class="w-64 md:w-72 lg:w-96">
+          <img id="profilePhoto" src="profile.png" alt="Profile Photo" class="profile-photo mx-auto block" />
+        </div>
+      </div>
+
+      <!-- Right columns: content spanning 2 cols -->
+      <div class="col-span-2">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold neon-text">Hi, I'm <span class="text-neon">Kareem Basha Shaik</span></h1>
+        <p class="mt-4 text-slate-300 text-base md:text-lg leading-relaxed max-w-3xl">
+          A data-driven problem solver, skilled in <strong>Python, SQL, and Power BI</strong>, with experience in healthcare data analytics and workflow optimization. As a <strong>U.S. Healthcare Claims Examiner at Carelon Global Solutions</strong>, I analyze complex datasets and drive efficiency.
+        </p>
+
+        <p class="mt-4 text-slate-300 max-w-3xl">
+          I hold a <strong>B.Sc. in Computer Applications</strong> from <strong>Rayalaseema University</strong> and am actively seeking a <strong>full-time Data Analyst role</strong> to apply my expertise in data analytics, automation, and strategic decision-making.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#projects" class="px-5 py-3 rounded-xl bg-gradient-to-r from-[#05202b] to-[#062233] neon-border hover:brightness-105">Projects</a>
+          <a href="#certificates" class="px-5 py-3 rounded-xl border border-slate-700">Certificates</a>
+          <a href="https://www.linkedin.com/in/kareembashaanalyst/" target="_blank" class="px-4 py-3 rounded-xl bg-[#0a2b38] border border-[#08323f] flex items-center gap-2">
+            <i class="fab fa-linkedin text-neon"></i> Connect
+          </a>
+          <a href="Shaik Kareem Basha.pdf" download class="px-4 py-3 rounded-xl border border-[#08323f]">Download Resume</a>
+        </div>
+
+        <div class="mt-6 grid grid-cols-3 gap-3 max-w-md">
+          <div class="p-3 bg-[#07111b] rounded-lg text-center">
+            <div class="text-xs text-slate-400">Projects</div>
+            <div class="font-medium">5</div>
+          </div>
+          <div class="p-3 bg-[#07111b] rounded-lg text-center">
+            <div class="text-xs text-slate-400">Certs</div>
+            <div class="font-medium">7</div>
+          </div>
+          <div class="p-3 bg-[#07111b] rounded-lg text-center">
+            <div class="text-xs text-slate-400">Apps</div>
+            <div class="font-medium">2</div>
+          </div>
+        </div>
+
+        <div class="mt-6 text-sm text-slate-400">
+          <p><i class="fas fa-phone mr-2"></i> <strong>Mobile:</strong> +91 9573434890</p>
+          <p class="mt-1"><i class="fas fa-envelope mr-2"></i> <strong>Email:</strong> <a class="text-neon" href="mailto:kareembashashaik2401@gmail.com">kareembashashaik2401@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="max-w-6xl mx-auto px-6 mt-12 border-t border-slate-800"></div>
+
+    
+   <!-- Streamlit Apps Section -->
+<section id="streamlit" class="max-w-6xl mx-auto px-6 mt-12">
+
+  <h2 class="text-2xl md:text-3xl font-semibold neon-text mb-6">Streamlit Apps</h2>
+
+  <div class="swiper streamlit-swiper">
+    <div class="swiper-wrapper">
+
+      <!-- ============================================ -->
+      <!-- 1. AI-Driven Farm Intelligence Dashboard     -->
+      <!-- ============================================ -->
+      <div class="swiper-slide p-4">
+        <div class="rounded-2xl p-6 glass neon-border">
+
+          <h3 class="text-xl font-semibold mb-3">AI-Driven Farm Intelligence Dashboard</h3>
+
+          <!-- Short Description -->
+          <p class="text-slate-300 text-sm leading-relaxed mb-3">
+            AI-Driven Farm Intelligence is a real-time Streamlit dashboard integrating live weather and
+            market-price feeds to generate daily automated recommendations for irrigation, pesticide timing,
+            and sell/hold decisions — powered by Supabase and scheduled GitHub Actions.
+          </p>
+
+          <!-- Bullet Points -->
+          <ul class="text-slate-300 text-sm list-disc pl-5 space-y-1 mb-4">
+            <li>Real-time decisioning with automated daily pipelines (weather + market) generating actionable recommendations.</li>
+            <li>Production-ready automation using GitHub Actions (6:00 AM IST) and Supabase for storage + instant dashboard updates.</li>
+            <li>ML-ready analytics pipeline prepared for NeuralProphet / scikit-learn forecasting and trend insights.</li>
+          </ul>
+
+          <!-- Video -->
+          <video 
+            src="ai farm dashboard.webm"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="w-full h-64 object-cover rounded-xl shadow-md neon-border"
+          ></video>
+
+          <div class="mt-4 flex flex-col gap-3">
+            <a class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center"
+               href="https://farm-intelligence-analytics-dashboard-9wca22appgqqextvviqz2cp.streamlit.app/" 
+               target="_blank">
+              Click Me to Open App
+            </a>
+
+            <a class="px-4 py-2 rounded-lg border border-slate-700 text-sm text-center"
+               href="https://github.com/kareem-2413/farm-intelligence-analytics-dashboard" 
+               target="_blank">
+               Repo
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ============================================ -->
+      <!-- 2. AI Automated Data Cleaning Assistant      -->
+      <!-- ============================================ -->
+      <div class="swiper-slide p-4">
+        <div class="rounded-2xl p-6 glass neon-border">
+
+          <h3 class="text-xl font-semibold mb-3">AI Automated Data Cleaning Assistant</h3>
+
+          <!-- Short Description -->
+          <p class="text-slate-300 text-sm leading-relaxed mb-3">
+            A fast, browser-based data cleaning assistant built with Python and Streamlit. It automates missing-value 
+            fixes, outlier corrections, data transformations, metadata creation, and one-click EDA to speed up data 
+            preparation from start to finish.
+          </p>
+
+          <!-- Bullet Points -->
+          <ul class="text-slate-300 text-sm list-disc pl-5 space-y-1 mb-4">
+            <li>Automates preprocessing: missing values, outliers, text cleanup, filters, sorting, grouping.</li>
+            <li>Generates metadata + cleaning reports in JSON/Excel for reproducibility.</li>
+            <li>Includes one-click EDA with statistics, correlations, and categorical insights.</li>
+          </ul>
+
+          <!-- Video -->
+          <video 
+            src="data cleaning.webm"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="w-full h-64 object-cover rounded-xl shadow-md neon-border"
+          ></video>
+
+          <div class="mt-4 flex flex-col gap-3">
+            <a class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center"
+               href="https://kareem-bhai-data-cleaning-assistant-ckicbcsxhkwzjz3qizznze.streamlit.app/" 
+               target="_blank">
+              Click Me to Open App
+            </a>
+
+            <a class="px-4 py-2 rounded-lg border border-slate-700 text-sm text-center"
+               href="https://github.com/kareem-2413/data-cleaning-assistant" 
+               target="_blank">
+               Repo
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination mt-4"></div>
+  </div>
+
+</section>
+
+<section id="ml-projects" class="max-w-6xl mx-auto px-6 mt-16">
+
+  <!-- Section Heading with Divider -->
+  <h2 class="section-heading text-2xl md:text-3xl font-semibold neon-text">
+    Machine Learning Projects
+  </h2>
+
+  <!-- Swiper -->
+  <div class="swiper ml-swiper">
+    <div class="swiper-wrapper">
+
+      <!-- ============================== -->
+      <!-- 1. Customer Churn Prediction -->
+      <!-- ============================== -->
+      <div class="swiper-slide">
+        <div class="card-wrapper flip-card glass neon-border">
+
+          <div class="flip-card-inner">
+
+            <!-- FRONT -->
+            <div class="flip-card-front p-5 rounded-2xl">
+              <img src="ml/customer churn.png"
+                alt="Customer Churn Prediction"
+                class="w-full h-56 object-cover rounded-xl shadow-md neon-border" />
+
+              <h3 class="text-xl font-semibold text-neon mt-4">
+                Customer Churn Prediction
+              </h3>
+
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="badge">Accuracy: 79%</span>
+                <span class="badge">Models: LR + RF</span>
+              </div>
+            </div>
+
+            <!-- BACK -->
+            <div class="flip-card-back p-5 rounded-2xl">
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Logistic Regression and Random Forest model to predict churn with ~79% accuracy.
+                Includes feature importance and SMOTE-based improvement analysis.
+              </p>
+
+              <a href="https://github.com/kareem-2413/Customer_churn_prediction"
+                target="_blank"
+                class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center block">
+                View GitHub Repo
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================== -->
+      <!-- 2. Healthcare Fraud Detection -->
+      <!-- ============================== -->
+      <div class="swiper-slide">
+        <div class="card-wrapper flip-card glass neon-border">
+
+          <div class="flip-card-inner">
+
+            <!-- FRONT -->
+            <div class="flip-card-front p-5 rounded-2xl">
+              <img src="ml/health care.png"
+                alt="Healthcare Fraud Detection"
+                class="w-full h-56 object-cover rounded-xl shadow-md neon-border" />
+
+              <h3 class="text-xl font-semibold text-neon mt-4">
+                Healthcare Fraud Detection
+              </h3>
+
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="badge">Accuracy: 94%</span>
+                <span class="badge">Imbalanced Data</span>
+              </div>
+            </div>
+
+            <!-- BACK -->
+            <div class="flip-card-back p-5 rounded-2xl">
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Fraud detection using Logistic Regression and Random Forest.
+                Includes imbalance handling and precision/recall evaluation.
+              </p>
+
+              <a href="https://github.com/kareem-2413/Healthcare-claims-fraud-detection"
+                target="_blank"
+                class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center block">
+                View GitHub Repo
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================== -->
+      <!-- 3. Crop Yield Prediction -->
+      <!-- ============================== -->
+      <div class="swiper-slide">
+        <div class="card-wrapper flip-card glass neon-border">
+
+          <div class="flip-card-inner">
+
+            <!-- FRONT -->
+            <div class="flip-card-front p-5 rounded-2xl">
+              <img src="ml/crop yeild prediction.png"
+                alt="Crop Yield Forecasting"
+                class="w-full h-56 object-cover rounded-xl shadow-md neon-border" />
+
+              <h3 class="text-xl font-semibold text-neon mt-4">
+                Crop Yield Forecasting
+              </h3>
+
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="badge">R²: 0.91</span>
+                <span class="badge">Linear Regression</span>
+              </div>
+            </div>
+
+            <!-- BACK -->
+            <div class="flip-card-back p-5 rounded-2xl">
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Predicts agricultural yield using environmental and soil variables.
+                Strong regression accuracy with interpretable feature importance.
+              </p>
+
+              <a href="https://github.com/kareem-2413/Crop-yield-forecasting-"
+                target="_blank"
+                class="px-4 py-3 rounded-lg bg-neon text-black text-sm font-medium text-center block">
+                View GitHub Repo
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination mt-4"></div>
+  </div>
+</section>
+
+
+
+
+    
+<!-- Projects Section (Marquee Style) -->
+<section id="projects" class="max-w-6xl mx-auto px-6 mt-16 fade-section">
+
+  <h2 class="section-heading text-2xl md:text-3xl font-semibold neon-text mb-6">
+    Projects
+  </h2>
+
+  <div class="relative overflow-hidden marquee-projects-container">
+
+    <div class="flex gap-6 marquee-projects">
+
+      <!-- Project Card 1 -->
+      <div class="project-card glass neon-border glow-hover tilt-effect">
+        <h3 class="project-title">Pizza Sales Dashboard</h3>
+        <img src="projects/pizzasales.png" class="project-img" />
+        <p class="project-desc">
+          Revenue trends, customer preferences, and time-based analysis.
+        </p>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="project-card glass neon-border glow-hover tilt-effect">
+        <h3 class="project-title">Manager Aspirations of Gen-Z</h3>
+        <img src="projects/02.jpg" class="project-img" />
+        <p class="project-desc">
+          Highlights leadership & culture preferences of emerging workforce.
+        </p>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="project-card glass neon-border glow-hover tilt-effect">
+        <h3 class="project-title">Mission Aspirations of Gen-Z</h3>
+        <img src="projects/03.jpg" class="project-img" />
+        <p class="project-desc">
+          Understand Gen-Z values, growth goals, and company expectations.
+        </p>
+      </div>
+
+      <!-- Project Card 4 -->
+      <div class="project-card glass neon-border glow-hover tilt-effect">
+        <h3 class="project-title">Healthcare Dashboard</h3>
+        <img src="projects/healthcare.jpg" class="project-img" />
+        <p class="project-desc">
+          Patient flow, cost insights, satisfaction, and KPIs.
+        </p>
+      </div>
+
+      <!-- Project Card 5 -->
+      <div class="project-card glass neon-border glow-hover tilt-effect">
+        <h3 class="project-title">Learning Aspirations of Gen-Z</h3>
+        <img src="projects/01.jpg" class="project-img" />
+        <p class="project-desc">
+          Captures Gen-Z learning styles and early career motivations.
+        </p>
+      </div>
+
+      <!-- Project Card 6 -->
+      <div class="project-card glass neon-border glow-hover tilt-effect">
+        <h3 class="project-title">HR Attrition Dashboard</h3>
+        <img src="projects/tablue.jpg" class="project-img" />
+        <p class="project-desc">
+          Attrition trends, demographics, and satisfaction scores.
+        </p>
+      </div>
+
+      <!-- Duplicate for infinite loop -->
+      <div class="project-card glass neon-border glow-hover tilt-effect">
+        <h3 class="project-title">Pizza Sales Dashboard</h3>
+        <img src="projects/pizzasales.png" class="project-img" />
+        <p class="project-desc">
+          Revenue trends, customer preferences, and time-based analysis.
+        </p>
+      </div>
+
+      <div class="project-card glass neon-border glow-hover tilt-effect">
+        <h3 class="project-title">Manager Aspirations of Gen-Z</h3>
+        <img src="projects/02.jpg" class="project-img" />
+        <p class="project-desc">
+          Highlights leadership & culture preferences of emerging workforce.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+  <section id="certificates" class="max-w-6xl mx-auto px-6 mt-12">
+  <h2 class="text-2xl md:text-3xl font-semibold neon-text mb-6">Certificates</h2>
+
+  <div class="relative overflow-hidden">
+    
+    <!-- Scrolling Row -->
+    <div class="flex gap-6 animate-scroll-left">
+      
+      <img src="certificates/Data analysis essentials.jpg" class="certificate-auto" />
+      <img src="certificates/Free code camp.jpg" class="certificate-auto" />
+      <img src="certificates/Guvi certificate.png" class="certificate-auto" />
+      <img src="certificates/Data science.jpg" class="certificate-auto" />
+      <img src="certificates/Tata certificate.jpg" class="certificate-auto" />
+      <img src="certificates/prompt engineering certificate.jpg" class="certificate-auto" />
+      <img src="certificates/Accenture certificate.jpg" class="certificate-auto" />
+      
+
+      <!-- Duplicate set for infinite looping -->
+       
+      <img src="certificates/Data analysis essentials.jpg" class="certificate-auto" />
+      <img src="certificates/Free code camp.jpg" class="certificate-auto" />
+      <img src="certificates/Guvi certificate.png" class="certificate-auto" />
+      <img src="certificates/Data science.jpg" class="certificate-auto" />
+      <img src="certificates/Tata certificate.jpg" class="certificate-auto" />
+      <img src="certificates/prompt engineering certificate.jpg" class="certificate-auto" />
+      <img src="certificates/Accenture certificate.jpg" class="certificate-auto" />
+      
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+ <!-- Contact Section -->
+<section id="contact" class="max-w-6xl mx-auto px-6 mt-16 mb-20">
+
+  <h2 class="section-heading text-2xl md:text-3xl font-semibold neon-text mb-8">
+    Contact
+  </h2>
+
+  <div class="fade-section">
+
+    <p class="text-slate-300 text-base leading-relaxed max-w-2xl">
+      Feel free to reach out to me for job opportunities, collaborations, or project discussions.
+    </p>
+
+    <!-- Contact Buttons Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+
+      <!-- Email -->
+      <a href="mailto:kareembashashaik2401@gmail.com"
+         class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
+        <i class="fas fa-envelope text-neon"></i>
+        <span>Email</span>
+      </a>
+
+      <!-- Phone -->
+      <a href="tel:+919573434890"
+         class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
+        <i class="fas fa-phone text-neon"></i>
+        <span>Call Me</span>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/919573434890"
+         target="_blank"
+         class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
+        <i class="fab fa-whatsapp text-neon"></i>
+        <span>WhatsApp</span>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/kareembashaanalyst/"
+         target="_blank"
+         class="flex items-center justify-center gap-3 p-4 rounded-xl glass neon-border hover:brightness-110 glow-hover">
+        <i class="fab fa-linkedin text-neon"></i>
+        <span>LinkedIn</span>
+      </a>
+
+    </div>
+
+    <!-- Direct Email Text -->
+    <div class="mt-8 text-sm text-slate-400">
+      <p><strong>Email:</strong> 
+        <a href="mailto:kareembashashaik2401@gmail.com" class="text-neon">
+          kareembashashaik2401@gmail.com
+        </a>
+      </p>
+
+      <p class="mt-1"><strong>Mobile:</strong> 
+        <a href="tel:+919573434890" class="text-neon">
+          +91 95734 34890
+        </a>
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer mt-8">
+      <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>&copy; 2024 Kareem Basha Shaik | All Rights Reserved</div>
+        <div class="flex gap-4">
+          <a href="https://www.linkedin.com/in/kareembashaanalyst/" target="_blank" class="text-neon"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="mailto:kareembashashaik2401@gmail.com" class="text-neon"><i class="fas fa-envelope fa-lg"></i></a>
+          <a href="tel:+919573434890" class="text-neon"><i class="fas fa-phone fa-lg"></i></a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Script -->
+  <script src="script.js" defer></script>
+</body>
+</html>
