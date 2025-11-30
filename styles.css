@@ -279,5 +279,24 @@ body {
 .marquee-projects-container:hover .marquee-projects {
   animation-play-state: paused;
 }
+/* NEW — Portfolio video styling (safe addon) */
+.portfolio-video {
+  width: 100%;
+  height: auto;
+  max-height: 430px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 0 22px rgba(0,198,255,0.10);
+}
+/* Finance Project Video */
+.finance-project-video {
+  width: 100%;
+  height: auto;
+  max-height: 430px;
+  border-radius: 16px;
+  margin-top: 16px;
+  object-fit: cover;
+  box-shadow: 0 0 22px rgba(0,198,255,0.10);
+}
 
 

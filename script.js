@@ -139,3 +139,22 @@ function handleContact(e) {
   alert(`Thanks ${name}, your message has been received.`);
   e.target.reset();
 }
+/* NEW — Safe Autoplay Fallback for Portfolio Video */
+document.addEventListener("DOMContentLoaded", () => {
+  const pv = document.querySelector(".portfolio-video");
+  if (pv) {
+    pv.play().catch(() => {
+      pv.muted = true;
+      pv.play().catch(()=>{});
+    });
+  }
+});
+/* Finance Project Video Play-Fix */
+document.addEventListener("DOMContentLoaded", () => {
+  const fp = document.querySelector(".finance-project-video");
+  if (fp) {
+    fp.addEventListener("play", () => {
+      fp.muted = false; // enable audio when user interacts
+    });
+  }
+});
