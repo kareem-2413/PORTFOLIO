@@ -158,3 +158,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const sun = document.querySelector(".sun-3d");
+  const orbits = document.querySelectorAll(".planet-orbit");
+
+  // Fade in sun
+  sun.style.transition = "opacity 1s ease, transform 0.8s ease";
+  sun.style.opacity = 1;
+  sun.style.transform += " scale(1.03)";
+
+  // Fade in planets one-by-one
+  orbits.forEach((orbit, index) => {
+    setTimeout(() => {
+      orbit.style.transition = "opacity 1.2s ease";
+      orbit.style.opacity = 1;
+    }, 300 + index * 250);
+  });
+});
+
+
+

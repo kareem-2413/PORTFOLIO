@@ -298,5 +298,201 @@ body {
   object-fit: cover;
   box-shadow: 0 0 22px rgba(0,198,255,0.10);
 }
+/* ====== SOLAR SYSTEM SECTION ====== */
 
+/* ===== SOLAR SYSTEM (COMPACT 3D, CLEAN PLANETS, NEON SUN) ===== */
 
+.solar-section {
+  margin: 40px auto;
+  padding: 0 15px;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* NEW BOLD HEADING */
+.solar-title {
+  font-size: 38px;
+  font-weight: 900;
+  color: #f1f5f9;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.solar-subtitle {
+  font-size: 16px;
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+.solar-3d-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1400px;
+}
+
+/* COMPACT SOLAR SYSTEM SIZE */
+.solar-system-3d {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.2), transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.25), transparent 60%),
+    radial-gradient(circle at 50% 50%, #020617, #000000 70%);
+  box-shadow: 0 0 40px rgba(15, 23, 42, 0.9);
+  transform-style: preserve-3d;
+}
+
+/* ===== SUN (NEON — ONLY GLOW SOURCE) ===== */
+.sun-3d {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 135px;
+  height: 135px;
+  transform: translate(-50%, -50%) translateZ(60px);
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff7a5, #ffdd55, #ff9833);
+  box-shadow:
+    0 0 60px rgba(250, 204, 21, 1),
+    0 0 130px rgba(249, 115, 22, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  font-weight: 900;
+  color: #111;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  animation: sunPulse 6s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* ===== ORBITS (FRONT-ONLY ROTATION) ===== */
+.planet-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  pointer-events: none;
+}
+
+@keyframes frontOrbit {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.orbit-python  { animation: frontOrbit 16s linear infinite; }
+.orbit-sql     { animation: frontOrbit 20s linear infinite; }
+.orbit-powerbi { animation: frontOrbit 24s linear infinite; }
+.orbit-ai      { animation: frontOrbit 28s linear infinite; }
+.orbit-dev     { animation: frontOrbit 32s linear infinite; }
+
+/* ===== PLANET POSITIONING (COMPACT) ===== */
+.planet-system {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+}
+
+.orbit-python  .planet-system { transform: translate(-50%, -50%) translateX(135px) translateZ(60px); }
+.orbit-sql     .planet-system { transform: translate(-50%, -50%) translateX(-145px) translateZ(55px); }
+.orbit-powerbi .planet-system { transform: translate(-50%, -50%) translateY(-145px) translateZ(55px); }
+.orbit-ai      .planet-system { transform: translate(-50%, -50%) translateY(145px) translateZ(50px); }
+.orbit-dev     .planet-system { transform: translate(-50%, -50%) translateX(0px) translateY(-190px) translateZ(45px); }
+
+/* ===== PLANET CORE (CLEAN COLORS—NO NEON) ===== */
+.planet-main {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #e2e8f0, #475569);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);   /* clean soft shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #f8fafc;
+  font-size: 15px;
+  font-weight: 800;
+  transform: translateZ(20px);
+}
+
+.planet-main i {
+  font-size: 42px;
+}
+
+.planet-text {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* ===== CLEAN COLOR PALETTE (NO GLOW) ===== */
+.planet-python .planet-main {
+  background: radial-gradient(circle at 20% 20%, #dbeafe, #3b82f6);
+}
+
+.planet-sql .planet-main {
+  background: radial-gradient(circle at 20% 20%, #ffe4e6, #f43f5e);
+}
+
+.planet-powerbi .planet-main {
+  background: radial-gradient(circle at 20% 20%, #ede9fe, #8b5cf6);
+}
+
+.planet-ai .planet-main {
+  background: radial-gradient(circle at 20% 20%, #dcfce7, #22c55e);
+  color: #022c22;
+}
+
+.planet-dev .planet-main {
+  background: radial-gradient(circle at 20% 20%, #cffafe, #06b6d4);
+}
+
+/* ===== MOONS (BIGGER, CLEAN CHIP STYLE) ===== */
+.moon-belt {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  max-width: 200px;
+}
+
+.moon-chip {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  white-space: nowrap;
+}
+
+/* FADE IN */
+.sun-3d,
+.planet-orbit {
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .solar-system-3d {
+    width: 88vw;
+    height: 88vw;
+  }
+}
